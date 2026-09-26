@@ -14,6 +14,12 @@
 
 </div>
 
+## 🛡️ Security Overview
+
+<p align="center">
+  <img src="./Screenshots/ciso-view.png" width="100%" alt="Security Overview">
+</p>
+
 ---
 
 ## 📌 Project Overview
