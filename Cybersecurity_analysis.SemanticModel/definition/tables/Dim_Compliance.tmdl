@@ -1,0 +1,59 @@
+table Dim_Compliance
+	lineageTag: a335d52d-159b-4541-8f14-af55029616d8
+
+	column Control_ID
+		dataType: string
+		lineageTag: 33025980-dd7d-490b-9f35-16659a1798ea
+		summarizeBy: none
+		sourceColumn: Control_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Framework
+		dataType: string
+		lineageTag: 6c2f97a0-0cea-4714-9ffa-deb634ce5e60
+		summarizeBy: none
+		sourceColumn: Framework
+
+		annotation SummarizationSetBy = Automatic
+
+	column Control_Description
+		dataType: string
+		lineageTag: f9924792-cd82-471c-b8d2-5af7939e0e7b
+		summarizeBy: none
+		sourceColumn: Control_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Implementation_Status
+		dataType: string
+		lineageTag: 3ccc295c-7223-4252-8b50-8cc845ec6d9f
+		summarizeBy: none
+		sourceColumn: Implementation_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Risk_Level
+		dataType: string
+		lineageTag: 31383c34-9755-46eb-9ffd-db050bd02231
+		summarizeBy: none
+		sourceColumn: Risk_Level
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Compliance = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\shash\OneDrive\Documents\MS_Power_BI\cybersec\Dim_Compliance.xlsx"), null, true),
+				    Dim_Compliance_Sheet = Source{[Item="Dim_Compliance",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Dim_Compliance_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Control_ID"}, {"Column2", "Framework"}, {"Column3", "Control_Description"}, {"Column4", "Implementation_Status"}, {"Column5", "Risk_Level"}}),
+				    #"Removed Top Rows" = Table.Skip(#"Renamed Columns",1)
+				in
+				    #"Removed Top Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,25 @@
+relationship 9f059f1c-7133-45f1-b6fa-43060cf52b88
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Incidents.YearMonth
+	toColumn: LocalDateTable_09d4530d-b72d-4d4c-b9a2-9a0f6668e77d.Date
+
+relationship AutoDetected_6705f717-7e07-48cd-8535-ef92da467c7b
+	fromColumn: Fact_Incidents.Asset_ID
+	toColumn: Dim_Asset.Asset_ID
+
+relationship a552cf8f-74cb-4c0b-b459-dff21acd8289
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Date.Date
+	toColumn: LocalDateTable_267fe370-e038-4107-b672-da0737efefd8.Date
+
+relationship fe4ded4d-2190-ae0c-be55-4dbd409d0602
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Fact_Incidents.Compliance_Framework
+	toColumn: Dim_Compliance.Framework
+
+relationship f078c3dc-be4d-44b0-2fe9-84dd77c69046
+	fromColumn: Fact_Incidents.Incident_Date
+	toColumn: Dim_Date.Date
+

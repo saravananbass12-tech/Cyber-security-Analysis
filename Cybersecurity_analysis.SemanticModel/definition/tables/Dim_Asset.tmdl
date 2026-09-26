@@ -1,0 +1,59 @@
+table Dim_Asset
+	lineageTag: af97045d-fb7c-4f86-91b6-fddd6573c0d0
+
+	column Asset_ID
+		dataType: string
+		lineageTag: d54ba271-2057-4ac9-86f9-d8cfe24e5e0e
+		summarizeBy: none
+		sourceColumn: Asset_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asset_Type
+		dataType: string
+		lineageTag: 6210d7e8-c5cb-4be6-9fcf-0f391f08aef6
+		summarizeBy: none
+		sourceColumn: Asset_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Business_Owner
+		dataType: string
+		lineageTag: 0ec20d09-88f0-4641-bde8-fff69767e6af
+		summarizeBy: none
+		sourceColumn: Business_Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Business_Criticality
+		dataType: string
+		lineageTag: 22c7bd11-6480-4173-8d7e-b27455437458
+		summarizeBy: none
+		sourceColumn: Business_Criticality
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hosting_Model
+		dataType: string
+		lineageTag: b94799b6-9448-4ab3-8f87-1f01e27b6370
+		summarizeBy: none
+		sourceColumn: Hosting_Model
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Asset = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\shash\OneDrive\Documents\MS_Power_BI\cybersec\Dim_Asset.xlsx"), null, true),
+				    Dim_Asset_Sheet = Source{[Item="Dim_Asset",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Dim_Asset_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Asset_ID"}, {"Column2", "Asset_Type"}, {"Column3", "Business_Owner"}, {"Column4", "Business_Criticality"}, {"Column5", "Hosting_Model"}}),
+				    #"Removed Top Rows" = Table.Skip(#"Renamed Columns",1)
+				in
+				    #"Removed Top Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

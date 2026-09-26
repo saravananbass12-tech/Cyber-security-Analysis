@@ -1,0 +1,21 @@
+table Dim_severity
+	lineageTag: 98c9ed2c-6419-444e-8d25-920634ad506c
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: 27b05c7d-d057-4c3e-9463-080eaae0a7ee
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_severity = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 0b957eea301242b7b5cf2360235f5710
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

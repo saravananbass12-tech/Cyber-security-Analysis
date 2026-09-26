@@ -1,0 +1,110 @@
+table Dim_Date
+	lineageTag: e66ba496-8e77-4047-b50e-97314ab74870
+
+	column Date
+		formatString: General Date
+		lineageTag: ce79cf99-f919-4ae1-b901-6e0b88db01d2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: a552cf8f-74cb-4c0b-b459-dff21acd8289
+			defaultHierarchy: LocalDateTable_267fe370-e038-4107-b672-da0737efefd8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: fa35a900-cc53-49f6-a10f-93aebdcd0ef9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		lineageTag: d7cda717-5515-4a5a-af46-3ef83f5aa11a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Name]
+		sortByColumn: 'Month Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: f9d62c9d-8b10-4534-a85e-1d482a07e955
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Number'
+		formatString: 0
+		lineageTag: 2397c05c-308b-4c31-8823-e482b74ab883
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Quarter Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter'
+		lineageTag: 9e5e47ad-a205-47b0-8945-20784f6135e1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		lineageTag: 0c8ab906-73c8-4b81-94b0-8e836d32fa14
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Weekend'
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e8cb5517-c4b8-418e-9c27-ebdc13d63125
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Is Weekend]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		lineageTag: 56cad2a3-a17a-4f31-af7c-11bf2a88f473
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day of Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Date = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS(
+				    CALENDARAUTO(),
+				    "Year",           YEAR([Date]),
+				    "Month Name",     FORMAT([Date], "MMMM"),
+				    "Month Number",   MONTH([Date]),
+				    "Quarter Number", QUARTER([Date]),
+				    "Fiscal Quarter", SWITCH(
+				        TRUE(),
+				        MONTH([Date]) IN {4,5,6},   "Q1",
+				        MONTH([Date]) IN {7,8,9},   "Q2",
+				        MONTH([Date]) IN {10,11,12},"Q3",
+				        MONTH([Date]) IN {1,2,3},   "Q4"
+				    ),
+				    "YearMonth",      FORMAT([Date], "YYYY-MM"),
+				    "Is Weekend",     IF(WEEKDAY([Date], 2) >= 6, TRUE(), FALSE()),
+				    "Day of Week",    FORMAT([Date], "dddd")
+				)
+
+	annotation PBI_Id = 6505d25a48274e69a56247cfad2c0f32
+

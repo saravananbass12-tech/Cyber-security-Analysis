@@ -1,0 +1,194 @@
+table Dim_measures
+	lineageTag: 906e7440-b344-44ba-9e4b-73393115f4b2
+
+	measure 'Total Incidents' = COUNTROWS('Fact_Incidents')
+		formatString: 0
+		lineageTag: 2882f38a-b5e2-412b-b616-34f52d2c925f
+
+	measure 'Critical Incidents' =
+			
+			CALCULATE(
+			    COUNTROWS('Fact_Incidents'),
+			    'Fact_Incidents'[Severity] = "Critical"
+			)
+		formatString: 0
+		lineageTag: 0d7cf3e6-d43a-4736-add6-e5ba711a4fac
+
+	measure 'High & Critical Incidents' =
+			
+			CALCULATE(
+			    COUNTROWS('Fact_Incidents'),
+			    'Fact_Incidents'[Severity] IN {"High", "Critical"}
+			)
+		formatString: 0
+		lineageTag: 05a244ec-3bb4-4932-8df2-86c02ed0fc70
+
+	measure 'Avg MTTD (hrs)' =
+			
+			DIVIDE(
+			    AVERAGEX(
+			        FILTER('Fact_Incidents', NOT(ISBLANK('Fact_Incidents'[Detection_Time_Min]))),
+			        'Fact_Incidents'[Detection_Time_Min]
+			    ),
+			    60
+			)
+		lineageTag: d186b098-1888-446f-9370-8e7956edb086
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg MTTR (hrs)' =
+			
+			DIVIDE(
+			    AVERAGEX(
+			        FILTER('Fact_Incidents', NOT(ISBLANK('Fact_Incidents'[Response_Time_Min]))),
+			        'Fact_Incidents'[Response_Time_Min]
+			    ),
+			    60
+			)
+		lineageTag: aa86daa2-4ee0-4212-b145-afb3b4f046b5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Estimated Loss' = SUM('Fact_Incidents'[Estimated_Loss_USD])
+		formatString: 0
+		lineageTag: 0bba016d-1d29-4c45-b978-ae08d528c286
+
+	measure 'Risk Score' = ```
+			
+			AVERAGEX(
+			    'Fact_Incidents',
+			    VAR cvss_scale = 
+			        SWITCH(TRUE(),
+			            'Fact_Incidents'[CVSS_Score] >= 9, 4,
+			            'Fact_Incidents'[CVSS_Score] >= 7, 3,
+			            'Fact_Incidents'[CVSS_Score] >= 4, 2,
+			            1)
+			    VAR loss_scale = 
+			        SWITCH(TRUE(),
+			            'Fact_Incidents'[Estimated_Loss_USD] >= 100000, 4,
+			            'Fact_Incidents'[Estimated_Loss_USD] >= 50000,  3,
+			            'Fact_Incidents'[Estimated_Loss_USD] >= 10000,  2,
+			            1)
+			    VAR rec_scale = 
+			        SWITCH(TRUE(),
+			            'Fact_Incidents'[Records_Compromised] >= 100000, 4,
+			            'Fact_Incidents'[Records_Compromised] >= 10000,  3,
+			            'Fact_Incidents'[Records_Compromised] >= 1000,   2,
+			            1)
+			    VAR impact = DIVIDE(cvss_scale + loss_scale + rec_scale, 3)
+			    VAR mttd_scale = 
+			        SWITCH(TRUE(),
+			            'Fact_Incidents'[Detection_Time_Min] >= 1440, 4,
+			            'Fact_Incidents'[Detection_Time_Min] >= 480,  3,
+			            'Fact_Incidents'[Detection_Time_Min] >= 60,   2,
+			            1)
+			    VAR mttr_scale = 
+			        SWITCH(TRUE(),
+			            'Fact_Incidents'[Response_Time_Min] >= 2880, 4,
+			            'Fact_Incidents'[Response_Time_Min] >= 1440, 3,
+			            'Fact_Incidents'[Response_Time_Min] >= 480,  2,
+			            1)
+			    VAR sev_scale = 
+			        SWITCH('Fact_Incidents'[Severity],
+			            "Critical", 4, "High", 3, "Medium", 2, 1)
+			    VAR likelihood = DIVIDE(mttd_scale + mttr_scale + sev_scale, 3)
+			    RETURN impact * likelihood
+			)
+			```
+		lineageTag: 112eaba9-e012-45e1-8def-12770c0b0cd9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MTTR SLA Breach Label' = ```
+			
+			FORMAT(
+			    DIVIDE(
+			        CALCULATE(COUNTROWS('Fact_Incidents'), 'Fact_Incidents'[Response_Time_Min] > 1440),
+			        COUNTROWS('Fact_Incidents'),
+			        0
+			    ),
+			    "0.0%"
+			) 
+			
+			```
+		lineageTag: 878c12b0-def9-4d45-8b30-0c325c959b86
+
+	measure 'Highest Impact Month' =
+			
+			VAR T = SUMMARIZE('Fact_Incidents', 'Fact_Incidents'[Incident_Month], "TotalLoss", SUM('Fact_Incidents'[Estimated_Loss_USD]))
+			RETURN MAXX(TOPN(1, T, [TotalLoss], DESC), 'Fact_Incidents'[Incident_Month])
+		lineageTag: bea1d5db-d2a0-47e1-9e33-c535181c8d48
+
+	measure 'Dominant Severity by Loss' =
+			
+			VAR T = SUMMARIZE('Fact_Incidents', 'Fact_Incidents'[Severity], "TotalLoss", SUM('Fact_Incidents'[Estimated_Loss_USD]))
+			RETURN MAXX(TOPN(1, T, [TotalLoss], DESC), 'Fact_Incidents'[Severity])
+		lineageTag: a201767a-2d2a-4d3c-b1bd-be29cea1eea4
+
+	measure 'Active Critical Threats' =
+			
+			CALCULATE(
+			    COUNTROWS('Fact_Incidents'),
+			    'Fact_Incidents'[Severity]        = "Critical",
+			    'Fact_Incidents'[Incident_Status] <> "Closed"
+			)
+		formatString: 0
+		lineageTag: 8330cb85-b47f-4fce-aa74-17de0b0b6ab5
+
+	measure 'Most Impacted Country' =
+			
+			VAR T = SUMMARIZE('Fact_Incidents', 'Fact_Incidents'[Source_Country], "TotalLoss", SUM('Fact_Incidents'[Estimated_Loss_USD]))
+			RETURN MAXX(TOPN(1, T, [TotalLoss], DESC), 'Fact_Incidents'[Source_Country])
+		lineageTag: 573185a6-d3ad-4c9e-b2c7-bc2c45e9196a
+
+	measure 'Highest Fined Month' =
+			
+			VAR T = SUMMARIZE('Fact_Incidents', 'Fact_Incidents'[Incident_Month], "TotalFines", SUM('Fact_Incidents'[Regulatory_Fine_USD]))
+			RETURN MAXX(TOPN(1, T, [TotalFines], DESC), 'Fact_Incidents'[Incident_Month])
+		lineageTag: 33535945-c28d-45c7-b6a0-2bc62343b9cc
+
+	measure 'Insurance Utilization %' =
+			
+			DIVIDE(
+			    CALCULATE(COUNTROWS('Fact_Incidents'), 'Fact_Incidents'[Cyber_Insurance_Claimed] = TRUE()),
+			    COUNTROWS('Fact_Incidents'),
+			    0
+			)
+		lineageTag: d0f80399-dbcd-406c-817e-973cd2fe98f2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ransomware Rate %' =
+			
+			DIVIDE(
+			    CALCULATE(COUNTROWS('Fact_Incidents'), 'Fact_Incidents'[Ransomware_Involved] = TRUE()),
+			    COUNTROWS('Fact_Incidents'),
+			    0
+			)
+		lineageTag: 03442333-4173-481e-8a34-9507db3f4527
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Business Impact (Avg)' = ```
+			AVERAGE(Fact_Incidents[Business_Impact_Score]) 
+			```
+		lineageTag: e73e20ae-9bf1-40b2-88c4-b9848810f825
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: c4130045-9a94-4461-9303-b596e9b3c924
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_measures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 7152310f3dbb418c88e2eda1eae3b282
+

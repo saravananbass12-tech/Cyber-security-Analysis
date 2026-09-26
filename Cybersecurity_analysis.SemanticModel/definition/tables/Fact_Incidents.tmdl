@@ -1,0 +1,468 @@
+table Fact_Incidents
+	lineageTag: 30bc2cfb-8632-45ea-be18-5054d23d675e
+
+	column Incident_ID
+		dataType: string
+		lineageTag: 053b9ff0-51c9-4518-beb8-efc3ebcebc5a
+		summarizeBy: none
+		sourceColumn: Incident_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incident_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a588c7e0-2b19-4e97-8774-f89466c1c4d7
+		summarizeBy: none
+		sourceColumn: Incident_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Incident_Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a0bffab-d6a7-4383-a833-c728553f483b
+		summarizeBy: sum
+		sourceColumn: Incident_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incident_Month
+		dataType: string
+		lineageTag: b66ee000-4ad7-43d9-a435-ca6a910dab0c
+		summarizeBy: none
+		sourceColumn: Incident_Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incident_Month_Num
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b2efbaa-d5a9-4bb6-8e15-6ea4a446edfd
+		summarizeBy: sum
+		sourceColumn: Incident_Month_Num
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incident_Day
+		dataType: string
+		lineageTag: 9b0276c2-2878-4a5b-b4ae-c2763c728310
+		summarizeBy: none
+		sourceColumn: Incident_Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incident_Day_Num
+		dataType: int64
+		formatString: 0
+		lineageTag: c9236105-a67e-42fa-a73c-d1ecffaee80f
+		summarizeBy: sum
+		sourceColumn: Incident_Day_Num
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 26e57da7-9203-4ffb-8a81-d81cbc193851
+		summarizeBy: none
+		sourceColumn: Is_Weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asset_ID
+		dataType: string
+		lineageTag: 8243f26a-4343-413a-af5d-0b30ec90c786
+		summarizeBy: none
+		sourceColumn: Asset_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Asset_Name
+		dataType: string
+		lineageTag: 703ef3f1-038e-475a-b7b0-0b9a077cfbb6
+		summarizeBy: none
+		sourceColumn: Asset_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Compliance_Framework
+		dataType: string
+		lineageTag: 838d71be-5a6e-4e3c-af32-4c990b321667
+		summarizeBy: none
+		sourceColumn: Compliance_Framework
+
+		annotation SummarizationSetBy = Automatic
+
+	column Control_Violated
+		dataType: string
+		lineageTag: 0a08c804-97cd-45e3-ae90-124bc59bcc3b
+		summarizeBy: none
+		sourceColumn: Control_Violated
+
+		annotation SummarizationSetBy = Automatic
+
+	column Control_Implementation_Status
+		dataType: string
+		lineageTag: 6e2e1a61-e700-4860-93db-14f05f99dae6
+		summarizeBy: none
+		sourceColumn: Control_Implementation_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attack_Vector
+		dataType: string
+		lineageTag: b91bce8f-66ba-464d-ac06-63cc5e87c72a
+		summarizeBy: none
+		sourceColumn: Attack_Vector
+
+		annotation SummarizationSetBy = Automatic
+
+	column Threat_Actor_Type
+		dataType: string
+		lineageTag: ac905621-6045-4c64-b1cc-7272e4d42ecd
+		summarizeBy: none
+		sourceColumn: Threat_Actor_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attacker_Geopolitics
+		dataType: string
+		lineageTag: 48a88dd0-3025-48f3-8109-8625f1869d2e
+		summarizeBy: none
+		sourceColumn: Attacker_Geopolitics
+
+		annotation SummarizationSetBy = Automatic
+
+	column Initial_Access_Method
+		dataType: string
+		lineageTag: 7460edba-1256-4be8-99ab-bc4cf89b63fd
+		summarizeBy: none
+		sourceColumn: Initial_Access_Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column MITRE_Tactic
+		dataType: string
+		lineageTag: d6c69e1b-05f6-4dec-a3d5-89613c352cef
+		summarizeBy: none
+		sourceColumn: MITRE_Tactic
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vulnerability_Exploited
+		dataType: string
+		lineageTag: 84cd7d29-db84-4007-8a49-a8d75eaa114f
+		summarizeBy: none
+		sourceColumn: Vulnerability_Exploited
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVE_ID
+		dataType: string
+		lineageTag: 3f1e5977-aaf3-49fe-addd-20a3ec05da7d
+		summarizeBy: none
+		sourceColumn: CVE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Severity
+		dataType: string
+		lineageTag: b69f2cec-014f-4a80-99b9-f792d5a9911e
+		summarizeBy: none
+		sourceColumn: Severity
+		sortByColumn: Severity_Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column CVSS_Score
+		dataType: double
+		lineageTag: 1631cc46-c98f-4ff6-961c-18fc23187845
+		summarizeBy: sum
+		sourceColumn: CVSS_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Business_Impact_Score
+		dataType: double
+		lineageTag: 26cbcb48-8bb7-4f86-9419-e0f52cd86329
+		summarizeBy: sum
+		sourceColumn: Business_Impact_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Detection_Source
+		dataType: string
+		lineageTag: 09b8ed40-6fe9-4396-9929-8a2b633b4286
+		summarizeBy: none
+		sourceColumn: Detection_Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source_Country
+		dataType: string
+		lineageTag: a65f906f-669f-4c99-833b-63c1337eae54
+		summarizeBy: none
+		sourceColumn: Source_Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Detection_Time_Min
+		dataType: int64
+		formatString: 0
+		lineageTag: 84bcf1d9-586c-4055-82e5-368d6d5fc96c
+		summarizeBy: sum
+		sourceColumn: Detection_Time_Min
+
+		annotation SummarizationSetBy = Automatic
+
+	column Detection_Time_Hours
+		dataType: double
+		lineageTag: 4d7d59b0-8246-4544-acb7-646a51b4e4f8
+		summarizeBy: sum
+		sourceColumn: Detection_Time_Hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Response_Time_Min
+		dataType: int64
+		formatString: 0
+		lineageTag: cb742e75-ee60-4477-8367-89027a93307a
+		summarizeBy: sum
+		sourceColumn: Response_Time_Min
+
+		annotation SummarizationSetBy = Automatic
+
+	column Response_Time_Hours
+		dataType: double
+		lineageTag: 8ff0385b-72a3-4ee6-96fc-288266725db7
+		summarizeBy: sum
+		sourceColumn: Response_Time_Hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Total_Resolution_Time_Min
+		dataType: int64
+		formatString: 0
+		lineageTag: e07f369c-3aef-465b-bc33-0f42c9c8c931
+		summarizeBy: sum
+		sourceColumn: Total_Resolution_Time_Min
+
+		annotation SummarizationSetBy = Automatic
+
+	column Resolution_Hours
+		dataType: double
+		lineageTag: 25e9d7a3-84a0-4d70-b895-f458d566581c
+		summarizeBy: sum
+		sourceColumn: Resolution_Hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Downtime_Hours
+		dataType: double
+		lineageTag: 276d563a-2156-472d-b65e-8d45097821f8
+		summarizeBy: sum
+		sourceColumn: Downtime_Hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Estimated_Loss_USD
+		dataType: int64
+		formatString: 0
+		lineageTag: 34955a08-14e7-4486-9cdc-5081c22eb9ca
+		summarizeBy: sum
+		sourceColumn: Estimated_Loss_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Loss_Tier
+		dataType: string
+		lineageTag: e5fdc921-64df-4e54-8c73-3a57a81d61c7
+		summarizeBy: none
+		sourceColumn: Loss_Tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column Records_Compromised
+		dataType: int64
+		formatString: 0
+		lineageTag: f1a13bce-965d-4e37-885f-a2545f5cb161
+		summarizeBy: sum
+		sourceColumn: Records_Compromised
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Type
+		dataType: string
+		lineageTag: 53f246d9-2823-436d-95b5-69d6b0f4c50d
+		summarizeBy: none
+		sourceColumn: Data_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Exfiltration_Confirmed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 82495275-dfbb-4054-90b7-c44f4f209f8a
+		summarizeBy: none
+		sourceColumn: Data_Exfiltration_Confirmed
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ransomware_Involved
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bfc7e632-af52-46d8-ad83-07c1d8bc0ef0
+		summarizeBy: none
+		sourceColumn: Ransomware_Involved
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ransom_Paid
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f9293754-467d-465f-84da-5dab499eefcb
+		summarizeBy: none
+		sourceColumn: Ransom_Paid
+
+		annotation SummarizationSetBy = Automatic
+
+	column Regulatory_Fine_USD
+		dataType: double
+		lineageTag: 4adb3849-050e-40c5-b17c-123f0b183ef5
+		summarizeBy: sum
+		sourceColumn: Regulatory_Fine_USD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cyber_Insurance_Claimed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 45c8c8b7-4c16-431f-8722-5e91141b72f2
+		summarizeBy: none
+		sourceColumn: Cyber_Insurance_Claimed
+
+		annotation SummarizationSetBy = Automatic
+
+	column Legal_Counsel_Engaged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 93e45dff-39df-4081-9822-d3c41ddc18f0
+		summarizeBy: none
+		sourceColumn: Legal_Counsel_Engaged
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Zero_Trust_Violation
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5ea88248-cf3b-4c50-b481-0f5ec7ce14fc
+		summarizeBy: none
+		sourceColumn: Is_Zero_Trust_Violation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cloud_Service_Provider
+		dataType: string
+		lineageTag: dab641f4-9b13-43c5-aeb8-ba5f4e7670bf
+		summarizeBy: none
+		sourceColumn: Cloud_Service_Provider
+
+		annotation SummarizationSetBy = Automatic
+
+	column Has_Third_Party_Risk
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8e7ad40b-4d6e-49c0-a0d2-ac56bd0f8f1e
+		summarizeBy: none
+		sourceColumn: Has_Third_Party_Risk
+
+		annotation SummarizationSetBy = Automatic
+
+	column Action_Taken
+		dataType: string
+		lineageTag: 274b1325-c4be-45e2-ad79-a7bb07a88ed9
+		summarizeBy: none
+		sourceColumn: Action_Taken
+
+		annotation SummarizationSetBy = Automatic
+
+	column Post_Incident_Review_Status
+		dataType: string
+		lineageTag: d3217cb3-ba4f-4d88-b59e-482768876d27
+		summarizeBy: none
+		sourceColumn: Post_Incident_Review_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incident_Status
+		dataType: string
+		lineageTag: 18992c12-9af1-419d-9f36-8aed23dbdbdb
+		summarizeBy: none
+		sourceColumn: Incident_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Severity_Sort
+		dataType: int64
+		formatString: 0
+		lineageTag: ee30864c-d073-41f9-80f2-d21fa66a394e
+		summarizeBy: sum
+		sourceColumn: Severity_Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f8554959-d735-4d20-884a-75e28caf1286
+		summarizeBy: none
+		sourceColumn: YearMonth
+
+		variation Variation
+			isDefault
+			relationship: 9f059f1c-7133-45f1-b6fa-43060cf52b88
+			defaultHierarchy: LocalDateTable_09d4530d-b72d-4d4c-b9a2-9a0f6668e77d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	hierarchy 'Incident_Date Hierarchy'
+		lineageTag: 2d485685-e7ce-4906-965d-79b17e76e85f
+
+		level Incident_Date
+			lineageTag: 52785865-210c-462c-a1f3-83fc2a75c822
+			column: Incident_Date
+
+	partition Fact_Incidents = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\shash\OneDrive\Documents\MS_Power_BI\cybersec\Fact_Incidents.xlsx"), null, true),
+				    Fact_Incidents_Sheet = Source{[Item="Fact_Incidents",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Fact_Incidents_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Incident_ID", type text}, {"Incident_Date", type date}, {"Incident_Year", Int64.Type}, {"Incident_Month", type text}, {"Incident_Month_Num", Int64.Type}, {"Incident_Day", type text}, {"Incident_Day_Num", Int64.Type}, {"Is_Weekend", type logical}, {"Asset_ID", type text}, {"Asset_Name", type text}, {"Compliance_Framework", type text}, {"Control_Violated", type text}, {"Control_Implementation_Status", type text}, {"Attack_Vector", type text}, {"Threat_Actor_Type", type text}, {"Attacker_Geopolitics", type text}, {"Initial_Access_Method", type text}, {"MITRE_Tactic", type text}, {"Vulnerability_Exploited", type text}, {"CVE_ID", type text}, {"Severity", type text}, {"CVSS_Score", type number}, {"Business_Impact_Score", type number}, {"Detection_Source", type text}, {"Source_Country", type text}, {"Detection_Time_Min", Int64.Type}, {"Detection_Time_Hours", type number}, {"Response_Time_Min", Int64.Type}, {"Response_Time_Hours", type number}, {"Total_Resolution_Time_Min", Int64.Type}, {"Resolution_Hours", type number}, {"Downtime_Hours", type number}, {"Estimated_Loss_USD", Int64.Type}, {"Loss_Tier", type text}, {"Records_Compromised", Int64.Type}, {"Data_Type", type text}, {"Data_Exfiltration_Confirmed", type logical}, {"Ransomware_Involved", type logical}, {"Ransom_Paid", type logical}, {"Regulatory_Fine_USD", type number}, {"Cyber_Insurance_Claimed", type logical}, {"Legal_Counsel_Engaged", type logical}, {"Is_Zero_Trust_Violation", type logical}, {"Cloud_Service_Provider", type text}, {"Has_Third_Party_Risk", type logical}, {"Action_Taken", type text}, {"Post_Incident_Review_Status", type text}, {"Incident_Status", type text}, {"Severity_Sort", Int64.Type}, {"YearMonth", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

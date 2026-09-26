@@ -1,0 +1,26 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Fact_Incidents","Dim_Compliance","Dim_Asset"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Fact_Incidents
+ref table DateTableTemplate_43e9922e-8224-4bfa-aa57-40f3c7446f65
+ref table LocalDateTable_09d4530d-b72d-4d4c-b9a2-9a0f6668e77d
+ref table Dim_Compliance
+ref table Dim_Asset
+ref table Dim_Date
+ref table LocalDateTable_267fe370-e038-4107-b672-da0737efefd8
+ref table Dim_severity
+ref table Dim_measures
+
+ref cultureInfo en-IN
+
