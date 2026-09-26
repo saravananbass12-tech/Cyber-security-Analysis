@@ -22,6 +22,20 @@
 
 ---
 
+## 🚨 SOC View
+
+<p align="center">
+  <img src="./Screenshots/soc-view.png" width="100%" alt="SOC View">
+</p>
+
+---
+
+## 📊 Dashboard Analysis
+
+<p align="center">
+  <img src="./Screenshots/dashboard-analysis.png" width="100%" alt="Dashboard Analysis">
+</p>
+
 ## 📌 Project Overview
 
 The **Cybersecurity Analysis Dashboard** is an interactive **Microsoft Power BI project** developed to analyze cybersecurity incidents, attack patterns, network security, financial impact, and security risks.
