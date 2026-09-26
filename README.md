@@ -122,9 +122,7 @@ The dashboard converts cybersecurity data into interactive visual insights using
 📧 **Email:** [saravananbass12@gmail.com](mailto:saravananbass12@gmail.com)
 
 
-💻 **GitHub:**
-
-[GitHub Profile](https://github.com/saravananbass12-tech)
+💻 **GitHub:** [GitHub Profile](https://github.com/saravananbass12-tech)
 
 
 
