@@ -126,7 +126,6 @@ The dashboard converts cybersecurity data into interactive visual insights using
 
 [GitHub Profile](https://github.com/saravananbass12-tech)
 
-🔗 **Project Repository:**
 
 
 </div>
