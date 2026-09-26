@@ -1,91 +1,59 @@
 # 🔐 Cybersecurity Analysis Dashboard
 
-## 📊 Project Overview
+<div align="center">
 
-The **Cybersecurity Analysis Dashboard** is an interactive Power BI project designed to analyze cybersecurity incidents, financial losses, attack patterns, and security risks.
+<img src="https://img.shields.io/badge/Power%20BI-2026-F2C811?style=for-the-badge&logo=powerbi&logoColor=black">
+<img src="https://img.shields.io/badge/Cybersecurity-Analysis-00C853?style=for-the-badge">
+<img src="https://img.shields.io/badge/Data-Analytics-2196F3?style=for-the-badge">
+<img src="https://img.shields.io/badge/Project-2026-673AB7?style=for-the-badge">
 
-This dashboard helps users understand cybersecurity data through interactive charts, KPIs, filters, and analytical views.
+</div>
+
+---
+
+## 📊 About the Project
+
+The **Cybersecurity Analysis Dashboard** is an interactive **Power BI data analytics project** developed to analyze cybersecurity incidents, attack patterns, financial losses, network security, and overall security risks.
+
+The dashboard transforms cybersecurity data into **interactive visual insights** that can help users understand security trends and incident patterns.
+
+---
+
+## 🚀 Project Highlights
+
+| 🔍 Analysis | 📌 Description |
+|---|---|
+| 🛡️ Security Overview | Overall cybersecurity incident analysis |
+| 🚨 Attack Analysis | Analysis of attack types and severity |
+| 🌐 Network Security | Network-related security analysis |
+| 💰 Financial Impact | Analysis of estimated financial losses |
+| 📈 Trend Analysis | Identification of cybersecurity trends |
+| ⚠️ Risk Analysis | Analysis of critical security risks |
+
+---
+
+## 📈 Key Performance Indicators
+
+<div align="center">
+
+| KPI | Value |
+|:---:|:---:|
+| 🚨 **Total Incidents** | **2,500** |
+| 💰 **Estimated Loss** | **544M** |
+| 🔴 **Critical Incidents** | **405** |
+| 📅 **Highest Impact Month** | **January** |
+| 📊 **Business Impact Average** | **4.53** |
+
+</div>
 
 ---
 
 ## 🛠️ Tools & Technologies
 
-- Microsoft Power BI
-- Power Query
-- Data Visualization
-- Data Analysis
-- Cybersecurity Dataset
-
----
-
-## 📌 Dashboard Highlights
-
-### 🔹 CISO Executive View
-- Total Security Incidents
-- Total Estimated Loss
-- Critical Incidents
-- Business Impact
-- Monthly Incident Analysis
-- Security Overview
-
-### 🔹 SOC View
-- Attack Analysis
-- Network Security
-- Incident Severity
-- Attack Types
-- Security Monitoring
-
-### 🔹 Dashboard Analysis
-- Cybersecurity Trends
-- Risk Analysis
-- Incident Distribution
-- Financial Impact
-- Security Insights
-
----
-
-## 📈 Key Metrics
-
-| Metric | Value |
-|---|---:|
-| Total Incidents | 2,500 |
-| Total Estimated Loss | 544M |
-| Critical Incidents | 405 |
-| Highest Impact Month | January |
-| Business Impact Average | 4.53 |
-
----
-
-## 🖼️ Dashboard Screenshots
-
-### 01 — CISO Executive View
-
-<img src="./Screenshots/ciso-view.png" alt="CISO Executive View" width="950">
-
----
-
-### 02 — SOC View
-
-<img src="./Screenshots/soc-view.png" alt="SOC View" width="950">
-
----
-
-### 03 — Dashboard Analysis
-
-<img src="./Screenshots/dashboard-analysis.png" alt="Dashboard Analysis" width="950">
-
----
-
-## 📂 Project Structure
-
 ```text
-Cyber-security-Analysis/
-│
-├── README.md
-│
-├── Cybersecurity_analysis.pbix
-│
-└── Screenshots/
-    ├── ciso-view.png
-    ├── soc-view.png
-    └── dashboard-analysis.png
+Microsoft Power BI
+Power Query
+Data Analysis
+Data Visualization
+Cybersecurity Analytics
+Interactive Dashboard
