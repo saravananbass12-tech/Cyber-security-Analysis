@@ -1,6 +1,7 @@
-<p align="center">
-    # 🔐 Cybersecurity Analysis Dashboard
-</p>
+<div align="center">
+
+ # 🔐 Cybersecurity Analysis Dashboard
+
 <div align="center">
 
 <img src="https://img.shields.io/badge/Power%20BI-2026-F2C811?style=for-the-badge&logo=powerbi&logoColor=black">
