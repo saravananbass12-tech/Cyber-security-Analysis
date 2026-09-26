@@ -121,7 +121,6 @@ The dashboard converts cybersecurity data into interactive visual insights using
 
 📧 **Email:** [saravananbass12@gmail.com](mailto:saravananbass12@gmail.com)
 
-📍 **Tamil Nadu, India**
 
 💻 **GitHub:**
 
@@ -129,7 +128,6 @@ The dashboard converts cybersecurity data into interactive visual insights using
 
 🔗 **Project Repository:**
 
-[Cybersecurity Analysis Dashboard](https://github.com/saravananbass12-tech/Cyber-security-Analysis)
 
 </div>
 
