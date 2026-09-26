@@ -129,3 +129,36 @@ Data Visualization
 Dashboard Development
        ↓
 Cybersecurity Insights
+
+
+---
+
+## 👨‍💻 Author
+
+<div align="center">
+
+### SARAVANAN D
+
+**Power BI | Data Analytics | AI & Technology**
+
+📧 **Email:** saravananbass12@gmail.com
+
+📍 **Tamil Nadu, India**
+
+💻 **GitHub:**  
+https://github.com/saravananbass12-tech
+
+🔗 **Project Repository:**  
+https://github.com/saravananbass12-tech/Cyber-security-Analysis
+
+</div>
+
+---
+
+<div align="center">
+
+### 🔐 Cybersecurity Analysis Dashboard | 2026
+
+**Turning Cybersecurity Data into Interactive Insights**
+
+</div>
