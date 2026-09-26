@@ -111,27 +111,6 @@ The dashboard converts cybersecurity data into interactive visual insights using
 
 ---
 
-## 🔄 Project Workflow
-
-```text
-Data Collection
-       ↓
-Data Cleaning
-       ↓
-Data Transformation
-       ↓
-Data Modeling
-       ↓
-Data Analysis
-       ↓
-Data Visualization
-       ↓
-Dashboard Development
-       ↓
-Cybersecurity Insights
-
----
-
 ## 👨‍💻 Author
 
 <div align="center">
