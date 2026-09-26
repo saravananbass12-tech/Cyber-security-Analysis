@@ -1,4 +1,6 @@
-# 🔐 Cybersecurity Analysis Dashboard
+<div align="center">
+    # 🔐 Cybersecurity Analysis Dashboard
+</div>
 
 <div align="center">
 
