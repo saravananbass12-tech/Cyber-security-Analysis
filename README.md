@@ -1,208 +1,184 @@
-                      # 🔐 Cybersecurity Analysis Dashboard
+# 🔐 Cybersecurity Analysis Dashboard
 
 <div align="center">
 
 <img src="https://img.shields.io/badge/Power%20BI-2026-F2C811?style=for-the-badge&logo=powerbi&logoColor=black">
-<img src="https://img.shields.io/badge/Cybersecurity-Analysis-00C853?style=for-the-badge&logo=security">
+<img src="https://img.shields.io/badge/Cybersecurity-Analysis-00C853?style=for-the-badge">
 <img src="https://img.shields.io/badge/Data-Analytics-2196F3?style=for-the-badge">
 <img src="https://img.shields.io/badge/Project-2026-673AB7?style=for-the-badge">
+
+<br><br>
+
+<h2>🛡️ Interactive Cybersecurity Data Analytics Dashboard</h2>
+
+<p><b>Analyze • Visualize • Understand</b></p>
+
+<p>
+An interactive Power BI dashboard for analyzing cybersecurity incidents,
+<br>
+attack patterns, network security, financial impact, and security risks.
+</p>
 
 </div>
 
 ---
 
+<div align="center">
+
 ## 📌 Project Overview
 
-The **Cybersecurity Analysis Dashboard** is an interactive **Microsoft Power BI data analytics project** developed to analyze cybersecurity incidents, attack patterns, network security, financial losses, and security risks.
+</div>
+
+The **Cybersecurity Analysis Dashboard** is an interactive **Microsoft Power BI data analytics project** developed to analyze cybersecurity incidents, attack patterns, network security, financial losses, business impact, and security risks.
 
 The dashboard converts cybersecurity data into **interactive visual insights** that help users understand incident patterns, identify high-risk areas, and analyze cybersecurity trends.
 
 ---
 
+<div align="center">
+
 ## 🎯 Project Objectives
 
-* Analyze cybersecurity incidents and attack patterns
-* Identify critical and high-severity incidents
-* Analyze network security threats
-* Understand financial impact and estimated losses
-* Identify cybersecurity trends
-* Monitor important security KPIs
-* Visualize security risks using interactive Power BI dashboards
-
----
-
-## 📊 Dashboard Pages
-
-| Page                             | Analysis                                                 |
-| -------------------------------- | -------------------------------------------------------- |
-| 🛡️ **Security Overview**        | Overall cybersecurity incidents and major KPIs           |
-| 🚨 **Attack Analysis**           | Attack types, severity, and incident patterns            |
-| 🌐 **Network Security Analysis** | Network-related attacks and security activity            |
-| 💰 **Financial Impact**          | Estimated financial losses and business impact           |
-| ⚠️ **Security Risk**             | Critical incidents, risk levels, and security indicators |
-
----
-
-## 📈 Key Performance Indicators
-
-| KPI                            |       Value |
-| ------------------------------ | ----------: |
-| 🚨 **Total Incidents**         |   **2,500** |
-| 💰 **Estimated Loss**          |    **544M** |
-| 🔴 **Critical Incidents**      |     **405** |
-| 📅 **Highest Impact Month**    | **January** |
-| 📊 **Average Business Impact** |    **4.53** |
-
-> **Note:** KPI values represent the current dashboard dataset and should be updated if the underlying data changes.
-
----
-
-## 🔍 Project Highlights
-
-### 🛡️ Security Overview
-
-* Total cybersecurity incidents
-* Critical incident monitoring
-* Business impact analysis
-* Overall security trends
-
-### 🚨 Attack Analysis
-
-* Attack type analysis
-* Severity distribution
-* Incident comparison
-* High-risk attack identification
-
-### 🌐 Network Security
-
-* Network attack analysis
-* Security activity monitoring
-* Network-related incident trends
-* Risk indicators
-
-### 💰 Financial Impact
-
-* Estimated financial losses
-* Business impact analysis
-* Loss trends
-* Financial risk visualization
-
-### ⚠️ Security Risk
-
-* Critical security incidents
-* Risk-level analysis
-* High-impact incidents
-* Security risk trends
-
----
-
-## 📊 Data Analytics
-
-The dashboard focuses on:
-
-```text
-Cybersecurity Incidents
-        ↓
-Attack Analysis
-        ↓
-Severity Analysis
-        ↓
-Network Security
-        ↓
-Financial Impact
-        ↓
-Risk Analysis
-        ↓
-Interactive Insights
-```
-
----
-
-## 🛠️ Tools & Technologies
-
-```text
-Microsoft Power BI
-Power Query
-Data Analysis
-Data Cleaning
-Data Visualization
-Cybersecurity Analytics
-Interactive Dashboards
-```
-
----
-
-## 📌 Power BI Features Used
-
-* 📊 KPI Cards
-* 📈 Line Charts
-* 📊 Bar Charts
-* 🍩 Donut Charts
-* 🔵 Scatter Charts
-* 🗺️ Interactive Visuals
-* 🎛️ Slicers
-* 📑 Page Navigation
-* 🔍 Filters
-* 🔗 Interactive Cross-Filtering
-* 🧩 Data Modeling
-
----
-
-## 🎨 Dashboard Design
-
-The dashboard follows a modern **2026 cybersecurity analytics design** with:
-
-* Dark cybersecurity-style visual design
-* Clear KPI cards
-* Interactive charts
-* Consistent dashboard navigation
-* Professional data visualization
-* Risk-focused analytics
-* User-friendly layout
-
----
-
-## 📂 Project Structure
-
-```text
-Cybersecurity-Analysis-Dashboard/
-│
-├── 📊 Cybersecurity Analysis Dashboard.pbix
-│
-├── 🖼️ Screenshots/
-│   ├── Security Overview.png
-│   ├── Attack Analysis.png
-│   ├── Network Security Analysis.png
-│   ├── Financial Impact.png
-│   └── Security Risk.png
-│
-└── 📄 README.md
-```
-
----
-
-## 📷 Dashboard Preview
+</div>
 
 <div align="center">
 
-<img src="Screenshot image.png" width="900">
+| Objective | Description |
+|---|---|
+| 🛡️ Incident Analysis | Analyze cybersecurity incidents and security events |
+| 🚨 Attack Analysis | Understand attack patterns and severity |
+| 🌐 Network Security | Analyze network-related security activity |
+| 💰 Financial Impact | Analyze estimated financial losses |
+| ⚠️ Risk Analysis | Identify critical and high-risk incidents |
+| 📈 Trend Analysis | Identify cybersecurity trends |
+| 📊 KPI Monitoring | Monitor important security KPIs |
+| 🔎 Interactive Analysis | Explore data using Power BI filters and slicers |
 
 </div>
 
 ---
 
-## 💡 Key Insights
+<div align="center">
 
-* **2,500** cybersecurity incidents were analyzed.
-* **405** incidents were classified as critical.
-* The estimated financial impact was **544M**.
-* **January** recorded the highest business impact in the current dataset.
-* The average business impact was **4.53**.
-* Attack, network, financial, and risk dimensions can be analyzed interactively.
+## 📊 Dashboard Pages
+
+| Dashboard Page | Description |
+|:---:|---|
+| 🛡️ **Security Overview** | Overall cybersecurity incidents and major KPIs |
+| 🚨 **Attack Analysis** | Attack types, severity, and incident patterns |
+| 🌐 **Network Security Analysis** | Network-related attacks and security activity |
+| 💰 **Financial Impact** | Estimated financial losses and business impact |
+| ⚠️ **Security Risk** | Critical incidents, risk levels, and security indicators |
+
+</div>
 
 ---
 
-## 🚀 Project Workflow
+<div align="center">
+
+## 📈 Key Performance Indicators
+
+| KPI | Value |
+|:---:|:---:|
+| 🚨 **Total Incidents** | **2,500** |
+| 💰 **Estimated Loss** | **544M** |
+| 🔴 **Critical Incidents** | **405** |
+| 📅 **Highest Impact Month** | **January** |
+| 📊 **Average Business Impact** | **4.53** |
+
+</div>
+
+> **Note:** KPI values represent the current dashboard dataset and should be updated if the underlying data changes.
+
+---
+
+<div align="center">
+
+## 🔍 Project Highlights
+
+</div>
+
+### 🛡️ Security Overview
+
+- Total cybersecurity incidents
+- Critical incident monitoring
+- Business impact analysis
+- Overall security trends
+- Security KPI monitoring
+
+### 🚨 Attack Analysis
+
+- Attack type analysis
+- Severity distribution
+- Incident comparison
+- High-risk attack identification
+- Attack pattern analysis
+
+### 🌐 Network Security
+
+- Network attack analysis
+- Security activity monitoring
+- Network-related incident trends
+- Security indicators
+- Network risk analysis
+
+### 💰 Financial Impact
+
+- Estimated financial losses
+- Business impact analysis
+- Financial loss trends
+- Financial risk visualization
+
+### ⚠️ Security Risk
+
+- Critical security incidents
+- Risk-level analysis
+- High-impact incidents
+- Security risk trends
+- Risk indicators
+
+---
+
+<div align="center">
+
+## 🛠️ Tools & Technologies
+
+<br>
+
+<img src="https://img.shields.io/badge/Microsoft-Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black">
+<img src="https://img.shields.io/badge/Power-Query-742774?style=for-the-badge">
+<img src="https://img.shields.io/badge/Data-Analysis-2196F3?style=for-the-badge">
+<img src="https://img.shields.io/badge/Data-Visualization-00C853?style=for-the-badge">
+<img src="https://img.shields.io/badge/Cybersecurity-Analytics-E91E63?style=for-the-badge">
+
+</div>
+
+---
+
+<div align="center">
+
+## 📌 Power BI Features Used
+
+| Feature | Purpose |
+|:---:|---|
+| 📊 KPI Cards | Display important security metrics |
+| 📈 Line Charts | Analyze trends |
+| 📊 Bar Charts | Compare categories |
+| 🍩 Donut Charts | Show category distribution |
+| 🔵 Scatter Charts | Analyze relationships |
+| 🎛️ Slicers | Interactive filtering |
+| 🔍 Filters | Dynamic data analysis |
+| 📑 Page Navigation | Navigate dashboard pages |
+| 🔗 Cross-Filtering | Interactive visual analysis |
+| 🧩 Data Modeling | Organize analytical data |
+
+</div>
+
+---
+
+<div align="center">
+
+## 🔄 Project Workflow
 
 ```text
 Data Collection
@@ -213,58 +189,10 @@ Data Transformation
        ↓
 Data Modeling
        ↓
+Data Analysis
+       ↓
 Data Visualization
        ↓
 Dashboard Development
        ↓
 Cybersecurity Insights
-```
-
----
-
-## 🎓 Project Information
-
-| Category           | Details                          |
-| ------------------ | -------------------------------- |
-| **Project**        | Cybersecurity Analysis Dashboard |
-| **Domain**         | Cybersecurity & Data Analytics   |
-| **Tool**           | Microsoft Power BI               |
-| **Year**           | 2026                             |
-| **Analysis Type**  | Interactive Data Analysis        |
-| **Dashboard Type** | Business Intelligence            |
-
----
-
-## 👨‍💻 Developed By
-
-**SARAVANAN D**
-
-📊 Data Analytics & Power BI Project
-🤖 AI & Data Analytics Learning
-💻 GitHub: **saravananbass12-tech**
-
----
-
-## ⭐ Project Status
-
-```text
-Status: Completed ✅
-Year: 2026
-Tool: Microsoft Power BI
-```
-
----
-
-## ⭐ Support
-
-If you find this project useful, consider giving the repository a ⭐ **Star**.
-
----
-
-<div align="center">
-
-### 🔐 Cybersecurity Analysis Dashboard | 2026
-
-**Turning Cybersecurity Data into Interactive Insights**
-
-</div>
