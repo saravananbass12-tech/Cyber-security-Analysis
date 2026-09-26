@@ -1,3 +1,5 @@
+<div align="center">
+  
 # 🔐 Cybersecurity Analysis Dashboard
 
 <div align="center">
