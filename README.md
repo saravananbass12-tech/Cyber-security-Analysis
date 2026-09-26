@@ -1,6 +1,4 @@
-<div align="center">
- 
- # 🔐 Cybersecurity Analysis Dashboard
+# 🔐 Cybersecurity Analysis Dashboard
 
 <div align="center">
 
@@ -15,6 +13,8 @@
 **Analyze • Visualize • Understand**
 
 </div>
+
+---
 
 ## 🛡️ Security Overview
 
@@ -37,6 +37,8 @@
 <p align="center">
   <img src="./Screenshots/dashboard-analysis.png" width="100%" alt="Dashboard Analysis">
 </p>
+
+---
 
 ## 📌 Project Overview
 
@@ -75,11 +77,11 @@ The dashboard converts cybersecurity data into interactive visual insights using
 
 | KPI | Value |
 |---|---:|
-| 🚨 Total Incidents | **2,500** |
-| 💰 Estimated Loss | **544M** |
-| 🔴 Critical Incidents | **405** |
-| 📅 Highest Impact Month | **January** |
-| 📊 Average Business Impact | **4.53** |
+| 🚨 **Total Incidents** | **2,500** |
+| 💰 **Estimated Loss** | **544M** |
+| 🔴 **Critical Incidents** | **405** |
+| 📅 **Highest Impact Month** | **January** |
+| 📊 **Average Business Impact** | **4.53** |
 
 ---
 
@@ -129,36 +131,3 @@ Data Visualization
 Dashboard Development
        ↓
 Cybersecurity Insights
-
-
----
-
-## 👨‍💻 Author
-
-<div align="center">
-
-### SARAVANAN D
-
-**Power BI | Data Analytics | AI & Technology**
-
-📧 **Email:** saravananbass12@gmail.com
-
-📍 **Tamil Nadu, India**
-
-💻 **GitHub:**  
-https://github.com/saravananbass12-tech
-
-🔗 **Project Repository:**  
-https://github.com/saravananbass12-tech/Cyber-security-Analysis
-
-</div>
-
----
-
-<div align="center">
-
-### 🔐 Cybersecurity Analysis Dashboard | 2026
-
-**Turning Cybersecurity Data into Interactive Insights**
-
-</div>
